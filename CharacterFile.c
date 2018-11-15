@@ -1,16 +1,27 @@
 //C program that read all characters from a file, outputting only the letter 'b's it finds in the file
-int c;
-FILE *fp=fopen("filename.txt","r");
-
-if(fp==NULL)
+#include<stdio.h>
+int main()
+{						//1
+char a,b;
+printf("Enter the character to print from file :");
+scanf("%c",&a);
+FILE *fpoint=fopen("test.txt","r");
+if (fpoint == NULL)
 {
-   printf("Error opening file!");
-   return -1;
+  printf("File not found!! Create file \"test.txt\" with some text in it :)");
+ return 0;
+} 
+while ((b = fgetc(fpoint)) != EOF)
+
+{		
+     //printf("%c ",b);				//2
+  //character from file is read in b
+  if(b==a)
+{
+ //since character found print it
+printf("%c ",b);
 }
 
-while((c=fgetc(fp)!=EOF) 
-{
-  //character is read in c
-  //do something
-}
-fclose(fp);
+}						//2
+return 0;
+}						//1
