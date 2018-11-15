@@ -22,6 +22,7 @@ while ((b = fgetc(fpoint)) != EOF)
 printf("%c ",b);
 }
 
-}						//2
+}					
+  fclose(fpoint);//2
 return 0;
 }						//1
