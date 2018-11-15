@@ -1,1 +1,28 @@
 //C program that read strings from the console and save them in a file
+#include<stdio.h>
+int main()
+{					
+char a;
+int f=0;
+FILE *fpoint;
+fpoint=fopen("test.txt","a+");// for files modes like "a+" visit: http://www.c4learn.com/c-programming/c-file-open-modes/ 
+//since a+ is used no need of file not found case
+while(scanf("%c",&a))
+{
+
+//runs until no character left.
+
+fputc(a,fpoint);
+if(a==10 && f==0)
+f=1;
+
+else if (a==10 && f==1)
+break;
+else if(a!=10 && f==1)
+f=0;
+
+//appends a at EOF 
+}
+				
+return 0;
+}						
