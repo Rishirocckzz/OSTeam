@@ -13,7 +13,7 @@ while(scanf("%c",&a))
 //runs until no character left.
 
 fputc(a,fpoint);
-if(a==10 ){
+if(a==10){
 scanf("%c",&a);
 if(a==10)
 break;
