@@ -4,12 +4,14 @@
 
 int main() 
 { 
-
-	FILE* fpoint = fopen("test.txt", "r"); //mode : Read
+    char FileName[100];
+    printf("Enter the file name : ");
+    scanf("%s",FileName);
+	FILE* fpoint = fopen(FileName, "r"); 
 
 	// checking if the file exist or not 
 	if (fpoint == NULL) { 
-		printf("File \"test.txt\" Not Found!\n"); 
+		printf("\nFile \"%s\" Not Found!\n",FileName); 
 		return -1; 
 	} 
 
@@ -22,6 +24,6 @@ int main()
 	fclose(fpoint); 
 
 	if (size != -1) 
-		printf("Size of the file is %ld bytes \n", size); 
+		printf("\nSize of the file is %ld bytes \n", size); 
 	return 0; 
 } 
